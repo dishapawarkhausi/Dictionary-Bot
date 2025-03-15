@@ -42,21 +42,21 @@ A comprehensive dictionary application that provides word definitions, translati
 - Flask
 - Internet connection for API access
 
-### Installation
+### Installation (Local)
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone https://github.com/dishapawarkhausi/dictionary-bot.git
    cd dictionary-bot
    ```
 
 2. Install the required packages:
-   ```
+   ```bash
    pip install -r requirements.txt
    ```
 
 3. Run the application:
-   ```
+   ```bash
    python app.py
    ```
 
@@ -64,6 +64,33 @@ A comprehensive dictionary application that provides word definitions, translati
    ```
    http://localhost:5000
    ```
+
+## Deployment on Render
+
+### Steps to Deploy
+
+1. Push your project to a GitHub repository.
+2. Go to [Render](https://render.com/) and log in.
+3. Click on "New Web Service."
+4. Connect your GitHub repository.
+5. Select the branch you want to deploy.
+6. In the **Build Command**, enter:
+   ```bash
+   pip install -r requirements.txt
+   ```
+7. In the **Start Command**, enter:
+   ```bash
+   gunicorn app:app
+   ```
+8. Set the **Environment Variables** (if required, e.g., API keys).
+9. Click "Deploy" and wait for Render to build and deploy your project.
+
+### Accessing the Application
+
+Once deployed, you will get a public URL from Render, such as:
+```
+https://dictionary-bot.onrender.com
+```
 
 ## Usage
 
@@ -111,7 +138,6 @@ dictionary-bot/
 ├── frontend/              # Frontend files
 │   ├── index.html         # Main HTML file
 │   ├── styles.css         # CSS styles
-
 ```
 
 ## Contributing
@@ -128,4 +154,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Google Translate
 - Urban Dictionary API
 - WordsAPI
-- better_profanity library for content filtering 
+- better_profanity library for content filtering
